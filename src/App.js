@@ -1,20 +1,25 @@
 import React from "react";
+import axios from "axios";
 
-function Food({favorite}) {
-  console.log();
-  return <h1>I like {favorite}</h1>;
-}
+class App extends React.Component{
+  state = {
+    isLoading : true,
+    movie: []
+  };
 
-function App() {
-  return (
-    <div>
-      <h1>Hello</h1>    
-      <Food favorite ="kimchi" />
-      <Food favorite ="ramen" />
-      <Food favorite ="sam" />
-      <Food favorite ="chukumi" />
-    </div>
-  );
+  getMovies = async () =>{
+    const getMovies = await axios.get("https://yts-proxy.now.sh/list_movies.json")
+  };
+  async componentDidMount(){
+   this.getMovies();
+  }
+    
+   
+  
+  render() {
+    const {isLoading} = this.state;
+    return <div>{isLoading ? "Loading...." : "we are ready"}</div>;
+  } 
 }
 
 export default App;
