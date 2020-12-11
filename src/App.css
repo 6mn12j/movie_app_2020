@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #eff3f7;
+    height: 100%;
+  }  
+
+html,
+body,
+#potato,
+.container{
+    height: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.movies .movie{
+    display:flex;
+    width:50%;
+    height: 255px;
+    background-color: #ffffff;
+    margin-bottom:60px;
+}
+
+.movie .movie__data{
+    display:flex;
+    flex-direction: column;
+    max-height: 100%;
+    
+}
+
+.movie .movie__title, .movie .movie__year{
+    margin:0;
+}
