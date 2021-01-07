@@ -1,0 +1,60 @@
+
+* {
+    box-sizing: border-box;
+  }
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eff3f7;
+    height: 100%;
+
+}  
+
+/* Reset */
+
+
+p{
+    font-size:12px;
+}
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p,
+ol, ul, li{
+    margin:0;
+    padding:0;
+    border:0;
+    vertical-align: baseline;
+}
+
+h3{
+    font-size:1.5em;
+    font-weight: 500;
+}
+
+html,
+body,
+#potato,
+.container{
+    height: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+.loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
