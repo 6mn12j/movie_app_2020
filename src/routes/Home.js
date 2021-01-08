@@ -15,11 +15,12 @@ class Home extends React.Component {
         data: {movies} 
       } 
     } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating"); 
-    this.setState({movies ,isLoading:false});// ({movie: movies}) es6
+    this.setState({movies ,isLoading:false});
+    // ({movie: movies}) es6
     //movies.data.data.movies
 
 
-    console.log(movies);
+   // console.log(movies);
   };
 
 
@@ -30,31 +31,31 @@ class Home extends React.Component {
 
 
   render() {
-    const { isLoading, movies } = this.state; //state 에서온 movies
+    const { isLoading, movies } = this.state;
     return (
       <section className="container">
-        {isLoading
-          ? <div className="loader">
-            <span className="loader__text">
-              "Loading..."
-            </span>
+        {isLoading ? (
+          <div className="loader">
+            <span className="loader__text">Loading...</span>
           </div>
-          : <div className="movies">
-              {movies.map(movie => (
-                <Movie
-                  key={movie.id}
-                  id={movie.id}
-                  year={movie.year}
-                  title={movie.title}
-                  summary={movie.summary}
-                  poster={movie.medium_cover_image}
-                  genres={movie.genres}
-                />
-                ))}
-            </div>}
-              </section>
-            );
-          }
-        }
+        ) : (
+          <div className="movies">
+            {movies.map(movie => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                year={movie.year}
+                title={movie.title}
+                summary={movie.summary}
+                poster={movie.medium_cover_image}
+                genres={movie.genres}
+              />
+            ))}
+          </div>
+        )}
+      </section>
+    );
+  }
+}
 
 export default Home;
